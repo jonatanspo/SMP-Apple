@@ -24,7 +24,7 @@ def calculate(x1, x2):
              
 if st.sidebar.button("Berechnen"):
         result = calculate(x1, x2)
-        st.sidebar.success("Die prozentuale Veränderung des NASDAQ Composite Index beträgt {:.2f} $".format(result))
+        st.sidebar.success("Die prozentuale Veränderung des NASDAQ Composite Index beträgt {:.2f} %".format(result))
              
 # Titel
 st.write("""

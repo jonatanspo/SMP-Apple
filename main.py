@@ -13,7 +13,7 @@ with open('model_svr.pkl', 'rb') as file:
 with open('min_max_scaler.pkl', 'rb') as file:
     scaler = pickle.load(file)
 
- # Button in der Seitenleiste
+# Sidebar für die Berechnung der przentualen Veränderung des IXIC
 st.sidebar.header("Berechnung prozentuale Veränderung des NASDAQ Composite Indexes")
 x1 = st.sidebar.number_input("aktueller Schlusskurs ($)", min_value = 0.00, step = 0.01)
 x2 = st.sidebar.number_input("vorheriger Schlusskurs ($)", min_value = 0.00, step = 0.01) 

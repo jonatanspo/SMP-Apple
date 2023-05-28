@@ -54,7 +54,6 @@ with right_column:
 
         new_data_scaled = scaler.transform(new_data)
         pred = svr_model.predict(new_data_scaled)
-        st.balloons()
         st.success("Der Schlusskurs der Apple Aktie wird morgen Abend {:.2f} betragen".format(pred[0]))
 
         if pred > p4:

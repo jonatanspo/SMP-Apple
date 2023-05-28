@@ -21,7 +21,7 @@ x2 = st.sidebar.number_input("vorheriger Schlusskurs ($)", min_value = 0.00, ste
 if st.button("Berechnen"): 
     ixic = ((x1 - x2) / x2) * 1000
     st.write("Die prozentuale Veränderung des NASDAQ Composite Index beträgt {:.2f} $".format(ixic)
-    else:
+else:
         str.warning("Bei der Berechnung ist etwas schief gelaufen!")
 # Titel
 st.write("""

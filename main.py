@@ -22,7 +22,6 @@ if st.button("Berechnen"):
     st.write("Die prozentuale Veränderung des NASDAQ Composite Index beträgt {:.2f} $".format(ixic)
     break
 
-
 # Titel
 st.write("""
 # Apple Inc. Aktienkursprognose

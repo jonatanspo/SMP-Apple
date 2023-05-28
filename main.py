@@ -70,6 +70,6 @@ with right_column:
         st.success("Der Schlusskurs der Apple Aktie wird morgen Abend {:.2f}$ betragen".format(pred[0]))
 
         if pred > p4:
-            st.success("Laut dieser Prognose ist es sinnvoll in die Apple Aktie zu investieren, da der morgige Schlusskurs höher ist als der von heute Abend!")          
+            st.success("Laut dieser Prognose ist es sinnvoll in die Apple Aktie zu investieren, da der morgige Schlusskurs  vermutlich höher ist als der von heute Abend!")          
         else: 
-            st.warning("Der Schlusskurs von morgen Abend ist niedriger oder gleich hoch wied der Schlusskurs von heute Abend. Daher scheint es nicht sinnvoll zu sein, in die Apple Aktie zu investieren!")
+            st.warning("Der Schlusskurs von morgen Abend ist niedriger oder gleich hoch wie der Schlusskurs von heute Abend. Daher scheint es nicht sinnvoll zu sein, in die Apple Aktie zu investieren!")

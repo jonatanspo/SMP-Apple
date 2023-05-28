@@ -13,22 +13,21 @@ with open('model_svr.pkl', 'rb') as file:
 with open('min_max_scaler.pkl', 'rb') as file:
     scaler = pickle.load(file)
 
+st.sidebar.header("### prozentuale Veränderung des NASDAQ Indexes berechnen:")
+x1 = st.sidebar.number_input("aktueller Schlusskurs ($)", min_value = 0.00, step = 0.01)
+x2 = st.sidebar.number_input("vorheriger Schlusskurs ($)", min_value = 0.00, step = 0.01)
+
+if st.button("Berechnen"): 
+    ixic = ((x1 - x2) / x2) * 1000
+    st.write("Die prozentuale Veränderung des NASDAQ Composite Index beträgt {:.2f} $".format(ixic);
+
+
 # Titel
 st.write("""
 # Apple Inc. Aktienkursprognose
 
 """)
 st.markdown("### Wie hoch ist der morgige Schlusskurs der Apple Aktie?")
-
-st.sidebar.header("### prozentuale Veränderung des NASDAQ Indexes berechnen:")
-x1 = st.sidebar.number_input("aktueller Schlusskurs ($)", min_value = 0.00, step = 0.01)
-x2 = st.sidebar.number_input("vorheriger Schlusskurs ($)", min_value = 0.00, step = 0.01)
-
-if st.sidebar.button("Berechnen"): 
-    ixic = ((x1 - x2) / x2) * 1000
-    st.write("Die prozentuale Veränderung des NASDAQ Composite Index beträgt {:.2f} $".format(ixic)
-else: 
-    st.warning("Die Berechnung ist fehlgeschlagen!")
 
 # Aufteilung der Eingabefelder in zwei Spalten
 left_column, right_column = st.columns(2)

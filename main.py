@@ -20,6 +20,14 @@ st.write("""
 """)
 st.markdown("### Wie hoch ist der morgige Schlusskurs der Apple Aktie?")
 
+st.sidebar.header("### prozentuale Veränderung des NASDAQ Indexes berechnen:")
+x1 = st.sidebar.number_input("aktueller Schlusskurs ($)", min_value = 0.00, step = 0.01)
+x2 = st.sidebar.number_input("vorheriger Schlusskurs ($)", min_value = 0.00, step = 0.01)
+
+if st.button("Berechnung"): 
+    ixic = ((x1 - x2) / x2) * 1000
+    st.write("Die prozentuale Veränderung des NASDAQ Composite Index beträgt {:.2f} $".format(ixic)
+
 # Aufteilung der Eingabefelder in zwei Spalten
 left_column, right_column = st.columns(2)
 
@@ -54,7 +62,7 @@ with right_column:
 
         new_data_scaled = scaler.transform(new_data)
         pred = svr_model.predict(new_data_scaled)
-        st.success("Der Schlusskurs der Apple Aktie wird morgen Abend {:.2f} betragen".format(pred[0]))
+        st.success("Der Schlusskurs der Apple Aktie wird morgen Abend {:.2f}$ betragen".format(pred[0]))
 
         if pred > p4:
             st.success("Laut dieser Prognose ist es sinnvoll in die Apple Aktie zu investieren, da der morgige Schlusskurs höher ist als der von heute Abend!")          

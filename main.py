@@ -13,8 +13,8 @@ with open('model_svr.pkl', 'rb') as file:
 with open('min_max_scaler.pkl', 'rb') as file:
     scaler = pickle.load(file)
 
-# Sidebar für die Berechnung der przentualen Veränderung des IXIC
-st.sidebar.header("Berechnung prozentuale Veränderung des NASDAQ Composite Indexes")
+# Sidebar für die Berechnung der prozentualen Veränderung des IXIC
+st.sidebar.header("Berechnung der prozentualen Veränderung des NASDAQ Composite Indexes")
 x1 = st.sidebar.number_input("aktueller Schlusskurs ($)", min_value = 0.00, step = 0.01)
 x2 = st.sidebar.number_input("vorheriger Schlusskurs ($)", min_value = 0.00, step = 0.01) 
 
@@ -27,10 +27,7 @@ if st.sidebar.button("Berechnen"):
         st.sidebar.success("Die prozentuale Veränderung des NASDAQ Composite Index beträgt {:.2f} %".format(result))
              
 # Titel
-st.write("""
-# Apple Inc. Aktienkursprognose
-
-""")
+st.write("# Apple Inc. Aktienkursprognose")
 st.markdown("### Wie hoch ist der morgige Schlusskurs der Apple Aktie?")
 
 # Aufteilung der Eingabefelder in zwei Spalten
@@ -70,6 +67,6 @@ with right_column:
         st.success("Der Schlusskurs der Apple Aktie wird morgen Abend {:.2f}$ betragen".format(pred[0]))
 
         if pred > p4:
-            st.success("Laut dieser Prognose ist es sinnvoll in die Apple Aktie zu investieren, da der morgige Schlusskurs  vermutlich höher ist als der von heute Abend!")          
+            st.success("Laut dieser Prognose ist es sinnvoll in die Apple Aktie zu investieren, da der morgige Schlusskurs vermutlich höher ist als der heutige!")          
         else: 
             st.warning("Der Schlusskurs von morgen Abend ist niedriger oder gleich hoch wie der Schlusskurs von heute Abend. Daher scheint es nicht sinnvoll zu sein, in die Apple Aktie zu investieren!")
